@@ -100,11 +100,29 @@ section:last-child {
   margin-bottom: 1.2rem;
 }
 
-.hero p {
-  color: var(--muted);
+.lyrics {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.lyrics-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lyrics-column p {
   font-size: 0.95rem;
-  letter-spacing: 0.08em;
   font-style: italic;
+  color: var(--text);
+  line-height: 1.9;
+}
+
+.lyrics-translation p {
+  color: var(--muted);
 }
 
 /* Headings */
