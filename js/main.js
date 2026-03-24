@@ -25,7 +25,7 @@ function renderPost(post) {
 
 async function loadPosts() {
   const { data, error } = await client
-    .from('posts')
+    .from('Posts')
     .select('*')
     .order('created_at', { ascending: false });
 
@@ -42,7 +42,7 @@ async function submitPost() {
   postSubmit.disabled = true;
 
   const { data, error } = await client
-    .from('posts')
+    .from('Posts')
     .insert([{ body, author }])
     .select()
     .single();
