@@ -5,11 +5,11 @@
 }
 
 :root {
-  --bg: #fafaf9;
-  --text: #1a1a1a;
-  --muted: #888;
-  --accent: #c9a87c;
-  --max-width: 760px;
+  --bg: #0c0c0c;
+  --text: #d4d0c8;
+  --muted: #555;
+  --accent: #8c7355;
+  --max-width: 680px;
 }
 
 html {
@@ -21,7 +21,7 @@ body {
   color: var(--text);
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* Nav */
@@ -29,22 +29,23 @@ header {
   position: sticky;
   top: 0;
   background-color: var(--bg);
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #1e1e1e;
   z-index: 100;
 }
 
 nav {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .site-title {
-  font-size: 1.1rem;
-  letter-spacing: 0.03em;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--accent);
 }
 
@@ -58,8 +59,8 @@ nav ul a {
   text-decoration: none;
   color: var(--muted);
   font-family: system-ui, sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: color 0.2s;
 }
@@ -76,8 +77,8 @@ main {
 }
 
 section {
-  padding: 5rem 0;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 6rem 0;
+  border-bottom: 1px solid #1a1a1a;
 }
 
 section:last-child {
@@ -87,35 +88,46 @@ section:last-child {
 /* Hero */
 .hero {
   text-align: center;
-  padding: 8rem 0;
+  padding: 12rem 0;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: normal;
-  letter-spacing: 0.02em;
-  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1.2rem;
 }
 
 .hero p {
   color: var(--muted);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  font-style: italic;
 }
 
 /* Headings */
 h2 {
-  font-size: 1.6rem;
+  font-size: 0.8rem;
   font-weight: normal;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--accent);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--muted);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem;
-  color: var(--muted);
+  padding: 3rem;
+  color: #2a2a2a;
   font-family: system-ui, sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
