@@ -1,19 +1,27 @@
 {
   "name": "Chintamani",
   "short_name": "Chintamani",
+  "description": "A place of my own.",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0c0c0c",
   "theme_color": "#0c0c0c",
   "icons": [
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/public/apple-touch-icon.png",
       "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/public/favicon-32x32.png",
+      "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
+      "src": "/public/favicon-16x16.png",
+      "sizes": "16x16",
       "type": "image/png"
     }
   ]
