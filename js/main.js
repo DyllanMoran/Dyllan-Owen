@@ -16,15 +16,17 @@ function formatDate(dateStr) {
 
 function renderPost(post) {
   var div = document.createElement('div');
-  div.className = 'post';
+  div.className = 'post-item';
   div.dataset.id = post.id;
   div.innerHTML =
     '<p class="post-body">' + post.body + '</p>' +
-    '<span class="post-meta">' + formatDate(post.created_at) + '</span>' +
-    '<span class="post-actions">' +
-      '<button class="post-action" onclick="editPost(' + post.id + ')">edit</button>' +
-      '<button class="post-action" onclick="deletePost(' + post.id + ')">delete</button>' +
-    '</span>';
+    '<div class="post-meta">' +
+      '<span>' + formatDate(post.created_at) + '</span>' +
+      '<span class="post-actions">' +
+        '<button onclick="editPost(' + post.id + ')">edit</button>' +
+        '<button onclick="deletePost(' + post.id + ')">delete</button>' +
+      '</span>' +
+    '</div>';
   postList.prepend(div);
 }
 
@@ -62,7 +64,7 @@ async function submitPost() {
 }
 
 async function deletePost(id) {
-  var div = document.querySelector('.post[data-id="' + id + '"]');
+  var div = document.querySelector('.post-item[data-id="' + id + '"]');
   if (!div) return;
 
   var { error } = await client
@@ -75,7 +77,7 @@ async function deletePost(id) {
 }
 
 async function editPost(id) {
-  var div = document.querySelector('.post[data-id="' + id + '"]');
+  var div = document.querySelector('.post-item[data-id="' + id + '"]');
   if (!div) return;
 
   var bodyEl = div.querySelector('.post-body');
@@ -86,11 +88,9 @@ async function editPost(id) {
   textarea.value = currentText;
 
   var saveBtn = document.createElement('button');
-  saveBtn.className = 'post-action';
   saveBtn.textContent = 'save';
 
   var cancelBtn = document.createElement('button');
-  cancelBtn.className = 'post-action';
   cancelBtn.textContent = 'cancel';
 
   var editActions = document.createElement('span');
