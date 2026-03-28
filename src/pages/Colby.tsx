@@ -36,6 +36,7 @@ export default function Colby() {
   }, [])
 
   async function loadPosts() {
+    if (!supabase) return
     const { data, error } = await supabase
       .from('Posts')
       .select('*')
@@ -45,6 +46,7 @@ export default function Colby() {
   }
 
   async function submitPost() {
+    if (!supabase) return
     const trimmed = body.trim()
     if (!trimmed) return
     setSubmitting(true)
@@ -60,6 +62,7 @@ export default function Colby() {
   }
 
   async function deletePost(id: number) {
+    if (!supabase) return
     const { error } = await supabase.from('Posts').delete().eq('id', id)
     if (error) { console.error(error); return }
     setPosts(prev => prev.filter(p => p.id !== id))
@@ -76,6 +79,7 @@ export default function Colby() {
   }
 
   async function saveEdit(id: number) {
+    if (!supabase) return
     const trimmed = editBody.trim()
     if (!trimmed) return
     const { error } = await supabase.from('Posts').update({ body: trimmed }).eq('id', id)
