@@ -5,7 +5,6 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const postList = document.getElementById('post-list');
 const postBody = document.getElementById('post-body');
-const postAuthor = document.getElementById('post-author');
 const postSubmit = document.getElementById('post-submit');
 
 function formatDate(dateStr) {
@@ -42,9 +41,9 @@ async function loadPosts() {
 
 async function submitPost() {
   const body = postBody.value.trim();
-  const author = postAuthor.value.trim();
+  const author = 'Dyllan';
 
-  if (!body || !author) return;
+  if (!body) return;
 
   postSubmit.disabled = true;
 
