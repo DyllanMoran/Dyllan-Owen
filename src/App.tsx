@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import Colby from './pages/Colby'
-import Tools from './pages/Tools'
+import DarkMaterials from './pages/DarkMaterials'
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/colby" element={<Colby />} />
-        <Route path="/tools" element={<Tools />} />
+        <Route path="/dark-materials" element={<DarkMaterials />} />
       </Routes>
       <footer />
     </>

@@ -73,6 +73,46 @@ nav ul a:hover {
   color: var(--text);
 }
 
+.nav-group {
+  position: relative;
+}
+
+.nav-group-label {
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: default;
+  transition: color 0.2s;
+}
+
+.nav-group:hover .nav-group-label {
+  color: var(--text);
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  background: var(--bg);
+  border: 1px solid #1e1e1e;
+  padding: 0.6rem 0;
+  list-style: none;
+  flex-direction: column;
+  min-width: max-content;
+}
+
+.nav-group:hover .nav-dropdown {
+  display: flex;
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 0.4rem 1.2rem;
+}
+
 /* Sections */
 main {
   max-width: var(--max-width);
